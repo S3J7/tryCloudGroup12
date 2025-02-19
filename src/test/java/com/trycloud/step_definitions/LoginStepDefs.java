@@ -18,6 +18,7 @@ LoginPage loginPage = new LoginPage();
         loginPage.login(ConfigurationReader.getProperty("username"),
                         ConfigurationReader.getProperty("password"));
 
+
     }
     @When("User click login button")
     public void user_click_login_button() {
