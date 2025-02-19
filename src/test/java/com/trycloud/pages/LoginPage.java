@@ -11,6 +11,7 @@ public class LoginPage {
     public LoginPage(){
 
         PageFactory.initElements(Driver.getDriver(), this);
+
     }
 
     @FindBy(id="user")
@@ -23,11 +24,16 @@ public class LoginPage {
     public WebElement loginBtn;
 
 
-    public void login(String userNameStr, String passwordStr) {
+    public void loginWithClick(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
         loginBtn.click();
-        // verification that we logged
+
     }
 
+    public void login(String userNameStr, String passwordStr) {
+        userName.sendKeys(userNameStr);
+        password.sendKeys(passwordStr);
+
+    }
 }
