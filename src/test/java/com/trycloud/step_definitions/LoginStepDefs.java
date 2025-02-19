@@ -31,8 +31,7 @@ LoginPage loginPage = new LoginPage();
 
         BrowserUtils.verifyTitleContains("Trycloud");
 
-
-    }
+}
 
 
 }
