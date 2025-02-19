@@ -30,10 +30,12 @@ public class LoginPage {
         loginBtn.click();
 
     }
-
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
 
     }
+
+
+
 }
