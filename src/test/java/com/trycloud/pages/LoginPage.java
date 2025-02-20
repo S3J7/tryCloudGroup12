@@ -33,7 +33,6 @@ public class LoginPage {
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
-
     }
 
 
