@@ -7,6 +7,7 @@ Feature: Contacts Module functionalities
     Then User clicks login button
 
 
+
   Scenario Outline: User should be able to create a new contact
     Given User click the contact button
     When User click on new contact button
@@ -25,9 +26,9 @@ Feature: Contacts Module functionalities
     Then User see the total number of the contacts near the “All Contacts” tab
     Examples:
 
-      | fullName     | company | title  | phone      | email         | address       | zip   | city        | state    | country | expectedName |
-      | John Doe     | Amazon  | SDET   | 3405879652 | abc@gmail.com | 123 Tester rd | 21547 | Queens      | New York | usa     | John Doe     |
-      | Morgan Green | Etsy    | Tester | 2501469874 | def@yahoo.com | 456 brown rd  | 54120 | Fall Church | Virginia | usa     | Morgan Green |
+      | fullName      | company | title  | phone      | email         | address       | zip   | city        | state    | country | expectedName  |
+      | Jackson Floyd | Amazon  | SDET   | 3405879652 | abc@gmail.com | 123 Tester rd | 21547 | Queens      | New York | usa     | Jackson Floyd |
+      | Morgan Green  | Etsy    | Tester | 2501469874 | def@yahoo.com | 456 brown rd  | 54120 | Fall Church | Virginia | usa     | Morgan Green  |
 
 
   Scenario: edit/delete any contact under Contacts module
