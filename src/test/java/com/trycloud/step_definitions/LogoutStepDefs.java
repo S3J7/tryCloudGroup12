@@ -4,10 +4,7 @@ import com.trycloud.pages.BasePage;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
-import io.cucumber.java.en.But;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 
 import java.util.Map;
 
