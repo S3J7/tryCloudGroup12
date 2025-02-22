@@ -13,10 +13,6 @@ public class BasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    public void contactMenu(String text){
-        String locator = "(//span[.='"+text+"'])[1]";
-        Driver.getDriver().findElement(By.xpath(locator));
-    }
 
     @FindBy(xpath = "(//div[@role='button'])[3]")
     public WebElement userIcon_Button;
@@ -29,5 +25,15 @@ public class BasePage {
         logout_Button.click();
     }
 
-}
+    //Siri - ContactMenu Button
+    @FindBy(xpath = "//ul[@id='appmenu']/li[@data-id='contacts']")
+    public WebElement contactBtn;
+
+    }
+
+
+
+
+
+
 
