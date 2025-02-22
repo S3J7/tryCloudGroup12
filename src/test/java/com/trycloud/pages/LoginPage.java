@@ -9,9 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
     public LoginPage(){
-
         PageFactory.initElements(Driver.getDriver(), this);
-//
     }
 
     @FindBy(id="user")
@@ -23,7 +21,6 @@ public class LoginPage {
     @FindBy(id = "submit-form")
     public WebElement loginBtn;
 
-
     public void loginWithClick(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
@@ -34,7 +31,5 @@ public class LoginPage {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
     }
-
-
 
 }

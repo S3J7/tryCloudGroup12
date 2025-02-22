@@ -2,7 +2,7 @@ Feature: Log out functionality
 
   User Story: As a user, I should be able to log out.
 
-  @logout
+
   Scenario: User can log out and end up in login page
     Given user is logged in with valid credentials
     When user clicks the user icon at the top right
@@ -16,7 +16,7 @@ Feature: Log out functionality
     Then user sees the login page is displayed
     But verify if user remains on login page after clicking back button
 
-
+  @logout
   Scenario: User is logged out after 3 minutes of inactivity
     Given user enters below valid credentials
       | username | Employee12  |
