@@ -95,7 +95,6 @@ public class ContactPage {
     @FindBy(xpath = "(//input[@type='text'])[16]")
     public WebElement country;
 
-
 }
 
 
