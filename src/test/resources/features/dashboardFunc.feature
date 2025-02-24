@@ -1,22 +1,31 @@
+@dashboard
+Feature: Modify Dashboard Page
+  As a user
+  I should be able to modify the Dashboard page
 
-Feature: Dashboard Functionality
+  Background:
+    Given User is on the login page
+    When User logs in with valid credentials
+    Then User is on dashboard
 
-  @mo
-  Scenario: User logs in and modifies dashboard
-    Given User is on login page
-    When User enters valid credentials
-    Then User should see the dashboard with modules and username
+  Scenario: User should see modules and user name on dashboard
+    Then User should see all "modules" on the dashboard
+    And User should see their "Username" displayed
 
-  Scenario: User customizes dashboard Test
-    Given User is on dashboard page
-    When User clicks Customize button
-    And User selects a status widget
-    And User selects a background image
-    Then The dashboard should reflect the selections
 
-  Scenario: User sets status message
-    Given User is on dashboard page
-    When User clicks Set Status button
-    And User selects an online status
-    And User selects a status message
-    Then The dashboard should display the selected status
+  Scenario: User customizes the dashboard
+    When User clicks on the "Customize" button
+    Then User should see "status" widgets
+    And User selects a "status" widget
+    Then User should see "background images"
+    And User selects a "background image"
+
+  Scenario: User sets status on the dashboard
+    When User clicks on the "Set Status" button
+    Then User should see "Online status" options
+    And User selects an "Online status" option
+    Then User should see "Status messages"
+    And User selects a "Status message"
+    And User can set a "status message"
+    And User can clear a "status message"
+    Then User should see their selections applied on the dashboard

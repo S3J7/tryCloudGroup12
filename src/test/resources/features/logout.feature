@@ -30,3 +30,4 @@ Feature: Log out functionality
     And user clicks the user icon at the top right and selects Logout
     Then verify if user sees a confirmation message pop up
     # supposed to fail : ---- WORKING ON THIS ----
+
