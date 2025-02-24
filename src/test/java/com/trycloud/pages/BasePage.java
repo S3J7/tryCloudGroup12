@@ -26,7 +26,7 @@ public class BasePage {
     }
 
     //Siri - ContactMenu Button
-    @FindBy(xpath = "//ul[@id='appmenu']/li[@data-id='contacts']")
+    @FindBy(xpath = "//li[@data-id='contacts']")
     public WebElement contactBtn;
 
     }
