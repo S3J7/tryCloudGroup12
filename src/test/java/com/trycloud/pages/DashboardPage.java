@@ -19,22 +19,54 @@ public class DashboardPage {
     @FindBy(xpath = "//div[@class='logo logo-icon']")
     public WebElement logo;
 
+    public boolean isLogoDisplayed() {
+        return logo.isDisplayed();
+    }
 
     //Locating username  with xpath
 
     @FindBy(xpath = "//span[@title='Employee12']")
     public WebElement userNameText;
 
+   public WebElement usernameDisplayed;
+
+    public boolean isUsernameDisplayed(String expectedUsername) {
+        return userNameText.isDisplayed() &&
+                userNameText.getText().trim().equals(expectedUsername);
     }
+
+
 
     //Locating dashboard modules in List.
     @FindBy(xpath = "//ul[@id='appmenu']/li")
     public List<WebElement> dashboardModules;
 
+    public boolean aredashboardModulesDisplayed(String expectedModules) {
+        String[] modules = expectedModules.split(",");
+        if (modules.length != dashboardModules.size()) {
+            return false;
+        }
+
+        for (String module : modules) {
+            boolean found = false;
+            for (WebElement element : dashboardModules) {
+                if (element.getText().trim().equalsIgnoreCase(module.trim())) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                return false;
+            }
+        }
+        return true;
 
 
 
-    //Locating customize button with xpath
+
+
+/*
+   //Locating customize button with xpath
     @FindBy(xpath = "//a[.='Customize']")
     public WebElement customizeButton;
 
@@ -61,8 +93,10 @@ public class DashboardPage {
     @FindBy(xpath = "//label[@for='user-status-online-status-online']")
     public WebElement statusOnline;
 
+   */
 
-}
+
+    }}
 
 
 

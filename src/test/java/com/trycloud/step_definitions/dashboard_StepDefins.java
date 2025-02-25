@@ -1,16 +1,19 @@
 package com.trycloud.step_definitions;
 
+import com.trycloud.pages.DashboardPage;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 
 public class dashboard_StepDefins {
 
     LoginPage loginPage = new LoginPage();
+    DashboardPage dashboardPage = new DashboardPage();
 
 
 
@@ -27,14 +30,20 @@ public class dashboard_StepDefins {
     }
     @Then("User is on dashboard")
     public void user_is_on_dashboard() {
+        System.out.println("dashboardPage.isLogoDisplayed() = " + dashboardPage.isLogoDisplayed());
+        Assert.assertTrue(dashboardPage.isLogoDisplayed());
 
     }
     @Then("User should see all {string} on the dashboard")
-    public void user_should_see_all_on_the_dashboard(String string) {
-
+    public void user_should_see_all_on_the_dashboard(String expectedItems) {
+        Assert.assertTrue("Not all expected items are displayed on the dashboard",
+                dashboardPage.aredashboardModulesDisplayed(expectedItems));
     }
+
     @Then("User should see their {string} displayed")
-    public void user_should_see_their_displayed(String string) {
+    public void user_should_see_their_displayed(String username) {
+        Assert.assertTrue("Username is not displayed correctly",
+                dashboardPage.isUsernameDisplayed(username));
 
     }
 

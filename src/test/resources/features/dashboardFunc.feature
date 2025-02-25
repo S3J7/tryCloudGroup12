@@ -1,9 +1,9 @@
-@dashboard
+
 Feature: Modify Dashboard Page
   As a user
   I should be able to modify the Dashboard page
-
-  Background:
+  @dashboard
+  Scenario: User logs in with valid credentials
     Given User is on the login page
     When User logs in with valid credentials
     Then User is on dashboard
