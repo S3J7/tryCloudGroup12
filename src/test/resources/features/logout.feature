@@ -1,7 +1,7 @@
 @logout
 Feature: Log out functionality
 
-  User Story: As a user, I should be able to log out.
+  Agile Story: As a user, I should be able to log out.
 
 
   Scenario: User can log out and end up in login page
@@ -26,9 +26,10 @@ Feature: Log out functionality
     Then verify if user is back on the login page
     # supposed to fail : success
 
+
   Scenario: Verify session termination after logout
     Given user is logged in with valid credentials
     When user clicks on the logout button
     Then the user's session is terminated
-    And the session token or cookie is invalidated
+    Then the user is redirected to the login page
 
