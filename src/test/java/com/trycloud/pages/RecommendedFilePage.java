@@ -1,8 +1,6 @@
 package com.trycloud.pages;
 
 import com.trycloud.utilities.Driver;
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,19 +15,19 @@ public class RecommendedFilePage {
 
     }
 
-    @FindBy(xpath = "//div[@id='recommendations']//span[text()='New folder']")
-    public WebElement newFolderMenu;
+    @FindBy(xpath = "//a[@aria-label='Files']")
+    public WebElement filesMenu;
 
-    @FindBy(xpath = "//*[@id=\"controls\"]/div[2]/a")
+    @FindBy(xpath = "//a[@class='button new']")
     public WebElement addIcon;
 
 
-    @FindBy(xpath = "//*[@id=\"controls\"]/div[2]/div[2]/ul/li[1]/label/span[2]")
+    @FindBy(css= "#file_upload_start")
     public WebElement uploadFile;
 
 
-    @FindBy(xpath = "//*[@id=\"controls\"]/div[2]/div[2]/ul/li[2]/a/span[2]")
-    public WebElement newFolder;
+    @FindBy(css = "#recommendations > ul > li:nth-child(4) > a > div.details > div.file-name > span")
+    public WebElement newFolderMenu;
 
 
     @FindBy(xpath = "//td[@class='filename ui-draggable ui-draggable-handle'][1]")
@@ -40,12 +38,16 @@ public class RecommendedFilePage {
     public WebElement uploadResultMessage;
 
 
+    @FindBy(xpath = "//*[@id=\"controls\"]/div[2]/div[2]/ul/li[2]/a/span[2]")
+    public WebElement addNewFolder;
+
+
     @FindBy(xpath = "//*[@id=\"fileList\"]/tr[1]/td[1]/label")
     public WebElement firstCheckBox;
 
 
-    @FindBy(id="//input[@id='select-files-165323']")
-    public WebElement filesCheckbox;
+    @FindBy(xpath="//tr[@data-file='Readme.md']")
+    public WebElement firstFile;
 
 
     @FindBy(xpath = "//span[@class='nametext']")
@@ -53,15 +55,15 @@ public class RecommendedFilePage {
 
 
 
-    @FindBy(xpath = "//*[@id=\"fileList\"]/tr[1]/td[2]/a/span[2]/a[2]/span[1]")
+    @FindBy(xpath = "//tr[@data-file='Readme.md']//span[@class='icon icon-more']")
     public WebElement actionButton;
 
 
-    @FindBy(xpath = "//*[@id=\"selectedActionsList\"]/div/ul/li[4]/a/span[2]")
+    @FindBy(xpath = "//li[@class=' action-delete-container']//a//span['text()=Delete file']")
     public WebElement deleteButton;
 
 
-    @FindBy(xpath = "//*[@id=\"fileList\"]/tr[1]/td[2]/div/ul/li[6]/a/span[2]")
+    @FindBy(xpath = "//li[@class=' action-movecopy-container']//span[text()='Move or copy']")
     public WebElement moveOrCopyButton;
 
 
@@ -77,12 +79,20 @@ public class RecommendedFilePage {
     public WebElement filesAndFoldersNumber;
 
 
-    @FindBy(xpath = "//span[@class='fileinfo']")
-    public WebElement fileInfo;
+    @FindBy(xpath = "//td[@class='filesummary']//span[@class='info']")
+    public WebElement filesInfo;
 
 
     @FindBy(xpath = "//span[@class='dirinfo']")
     public WebElement folderInfo;
+
+
+    @FindBy(xpath = "//span[@class='fileinfo']")
+    public  WebElement onlyFile;
+
+
+    @FindBy(xpath = "//span[@class='connector']")
+    public WebElement connector;
 
 
     @FindBy(id = "view13-input-folder")
@@ -94,11 +104,30 @@ public class RecommendedFilePage {
     public WebElement submitIcon;
 
 
-    @FindBy(xpath = "//span[@class='filename-parts']")
+    @FindBy(xpath = "//tr[@data-entryname='New folder']")
     public WebElement fileNameThatItemShouldBeAdded;
 
     @FindBy(xpath = "//button[@class='primary']")
     public WebElement moveToNewFolderButton;
+
+    @FindBy(xpath ="//a[@class='name']//span[text()='New folder']")
+    public WebElement fileNameThatItemHasBeenMoved;
+
+
+    @FindBy(xpath = "//tr[@data-entryname='3']")
+    public  WebElement fileThatItemShouldCopyTo;
+
+
+    @FindBy(xpath = "//button[text()='Copy to 3']")
+    public WebElement copyToNewFolderButton;
+
+
+    @FindBy(xpath = "//span[@class='nametext']//span[.='3']/..")
+    public WebElement fileNameThatItemHasBeenCopied;
+
+
+    @FindBy(xpath = "//tr[@data-file='newFolder2']//span[@class='icon icon-more']")
+    public WebElement toBeDeleted;
 
 
 
