@@ -1,6 +1,5 @@
 package com.trycloud.step_definitions;
 
-import com.trycloud.pages.BasePage;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.pages.LogoutPage;
 import com.trycloud.utilities.BrowserUtils;
@@ -85,8 +84,7 @@ public class LogoutStepDefs {
     }
     @Then("the session token or cookie is invalidated")
     public void the_session_token_or_cookie_is_invalidated() {
-        // Verify that the user is redirected to the login page
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("login"));
+        BrowserUtils.verifyURLContains("login");
     }
 
 }
