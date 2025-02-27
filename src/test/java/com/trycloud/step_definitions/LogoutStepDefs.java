@@ -1,11 +1,12 @@
 package com.trycloud.step_definitions;
 
-import com.trycloud.pages.BasePage;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.pages.LogoutPage;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
+import org.openqa.selenium.Cookie;
 
 import java.util.Map;
 
@@ -71,9 +72,19 @@ public class LogoutStepDefs {
         BrowserUtils.verifyURLContains("login");
     }
 
-    @Then("verify if user sees a confirmation message pop up")
-    public void verifyIfUserSeesAConfirmationMessagePopUp() {
-        // ---- WORKING ON THIS ----
+    @When("user clicks on the logout button")
+    public void user_clicks_on_the_logout_button() {
+        logoutPage.click_on_logout();
+    }
+    @Then("the user's session is terminated")
+    public void the_user_s_session_is_terminated() {
+        // Verify that the session token or cookie is invalidated
+        Cookie sessionCookie = Driver.getDriver().manage().getCookieNamed("nc_token");
+        Assert.assertNull(sessionCookie);
+    }
+    @Then("the session token or cookie is invalidated")
+    public void the_session_token_or_cookie_is_invalidated() {
+        BrowserUtils.verifyURLContains("login");
     }
 
 }

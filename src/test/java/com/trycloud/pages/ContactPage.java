@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class ContactPage {
 
     public ContactPage() {
@@ -12,45 +14,49 @@ public class ContactPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//li[@data-id='contacts']")
-    public WebElement contactBtn;
+
 
 
     //FILES
+
     @FindBy(xpath = "//span[.='ghost.jpg']")
     public WebElement ghostPicture;
 
-    //contact name
 
 
-    @FindBy(xpath = "//div[contains(text(), 'Jackson Floyd')]")
-    public WebElement jackson;
+    //contact name / lists
 
 
-    @FindBy(id = "contacts-list")
-    public WebElement contactLists;
+    @FindBy(xpath = "//div[@id='contacts-list']/div")
+
+    public List<WebElement> middleColumn;
+
 
 
 
     //Buttons
+
+    @FindBy(xpath = "//li[@data-id='contacts']")
+    public WebElement contactBtn;
 
     @FindBy(xpath = "//button[@id='new-contact-button']")
     public WebElement newContactBtn;
 
 
     @FindBy(xpath = "//div[@class='app-navigation-entry__utils']")
-    public WebElement totalContacts;
+    public WebElement totalContactNumbers;
 
-    @FindBy(xpath = "(//div[@class='trigger'])[8]")
+    @FindBy(xpath = "//div[contains(@class, 'header-menu')]//button[@aria-label='Actions' and @aria-haspopup='true']")
+                          //div[contains(@class, 'property__label') and normalize-space(text())='Address']/following-sibling::input[@type='text']
     public WebElement threeDotButtons;
 
-    @FindBy(xpath = "(//button[@class='action-button focusable'])[6]")
+    @FindBy(xpath = "(//div[@class='popover__wrapper'])//span[text()='Delete']")
     public WebElement deleteBtn;
 
-    @FindBy(xpath = "(//button[@aria-label='Actions'])[7]")
+    @FindBy(xpath = "//div[contains(@class, 'contact-header-avatar__menu')]//button[@aria-label='Actions']")
     public WebElement photoIcon;
 
-    @FindBy(xpath = " (//button[@class='action-button focusable'])[6]")
+    @FindBy(xpath = "//ul//li[contains(@class, 'action')]//button//span[text()='Choose from Files']")
     public WebElement chooseFromFileBtn;
 
     @FindBy (xpath = "//button[.='Choose']")
@@ -71,30 +77,27 @@ public class ContactPage {
     @FindBy(xpath = "//input[@inputmode='tel']")
     public WebElement phoneNumber;
 
-    @FindBy(xpath = "(//input[@type='text'])[8]")
+    @FindBy(xpath = "//input[@inputmode='email']")
     public WebElement email;
 
 
 //Address
 
-    @FindBy(xpath = "(//input[@type='text'])[10]")
-    public WebElement POBox;
 
-    @FindBy(xpath = "(//input[@type='text'])[11]")
+    @FindBy(xpath = "//div[@class='property__label' and normalize-space()='Address']/following-sibling::input[@type='text' and @class='property__value']")
     public WebElement address;
 
-    @FindBy(xpath = "(//input[@type='text'])[13]")
+    @FindBy(xpath = "//div[@class='property__label' and normalize-space()='Postal code']/following-sibling::input[@type='text' and @class='property__value']")
     public WebElement zip;
 
-    @FindBy(xpath = "(//input[@type='text'])[14]")
+    @FindBy(xpath = "//div[@class='property__label' and normalize-space()='City']/following-sibling::input[@type='text' and @class='property__value']")
     public WebElement city;
 
-    @FindBy(xpath = "(//input[@type='text'])[15]")
+    @FindBy(xpath = "//div[@class='property__label' and normalize-space()='State or province']/following-sibling::input[@type='text' and @class='property__value']")
     public WebElement state;
 
-    @FindBy(xpath = "(//input[@type='text'])[16]")
+    @FindBy(xpath = "//div[@class='property__label' and normalize-space()='Country']/following-sibling::input[@type='text' and @class='property__value']")
     public WebElement country;
-
 
 }
 
