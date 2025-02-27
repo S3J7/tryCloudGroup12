@@ -99,7 +99,6 @@ public class ContactPage {
     @FindBy(xpath = "//div[@class='property__label' and normalize-space()='Country']/following-sibling::input[@type='text' and @class='property__value']")
     public WebElement country;
 
-
 }
 
 

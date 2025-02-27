@@ -1,3 +1,4 @@
+@logout
 Feature: Log out functionality
 
   User Story: As a user, I should be able to log out.
@@ -16,7 +17,7 @@ Feature: Log out functionality
     Then user sees the login page is displayed
     But verify if user remains on login page after clicking back button
 
-  @logout
+
   Scenario: User is logged out after 3 minutes of inactivity
     Given user enters below valid credentials
       | username | Employee12  |
@@ -25,9 +26,9 @@ Feature: Log out functionality
     Then verify if user is back on the login page
     # supposed to fail : success
 
-  Scenario: Users should see a logout confirmation message to avoid accidental logouts
+  Scenario: Verify session termination after logout
     Given user is logged in with valid credentials
-    And user clicks the user icon at the top right and selects Logout
-    Then verify if user sees a confirmation message pop up
-    # supposed to fail : ---- WORKING ON THIS ----
+    When user clicks on the logout button
+    Then the user's session is terminated
+    And the session token or cookie is invalidated
 
