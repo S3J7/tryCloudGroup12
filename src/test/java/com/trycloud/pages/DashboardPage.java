@@ -3,10 +3,13 @@ package com.trycloud.pages;
 
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.json.JsonOutput;
 import org.openqa.selenium.support.FindBy;
 
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DashboardPage {
@@ -23,58 +26,44 @@ public class DashboardPage {
         return logo.isDisplayed();
     }
 
-    //Locating username  with xpath
-
-    @FindBy(xpath = "//span[@title='Employee12']")
+    //Locating username with xpath
+    @FindBy(xpath = "//div[@class='John doe']")
     public WebElement userNameText;
 
-   public WebElement usernameDisplayed;
-
-    public boolean isUsernameDisplayed(String expectedUsername) {
-        return userNameText.isDisplayed() &&
-                userNameText.getText().trim().equals(expectedUsername);
+    public boolean isUserNameDisplayed() {
+        return userNameText.isDisplayed();
     }
 
 
 
+
+
+
+
     //Locating dashboard modules in List.
-    @FindBy(xpath = "//ul[@id='appmenu']/li")
+    @FindBy(xpath = "//ul[@id='appmenu']")
     public List<WebElement> dashboardModules;
 
-    public boolean aredashboardModulesDisplayed(String expectedModules) {
-        String[] modules = expectedModules.split(",");
-        if (modules.length != dashboardModules.size()) {
-            return false;
+    public static List<String>getElementsText(List<WebElement> list){
+
+        List<String> elementsText = new ArrayList<>();
+        for(WebElement element : list){
+            elementsText.add(element.getText().trim());
         }
+        return elementsText;
+    }
 
-        for (String module : modules) {
-            boolean found = false;
-            for (WebElement element : dashboardModules) {
-                if (element.getText().trim().equalsIgnoreCase(module.trim())) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                return false;
-            }
-        }
-        return true;
-
-
-
-
-
-/*
-   //Locating customize button with xpath
+    //Locating customize button with xpath
     @FindBy(xpath = "//a[.='Customize']")
     public WebElement customizeButton;
-
-
 
     //Locating status widget with xpath
     @FindBy(xpath = "//label[@class='icon-user-status-online']")
     public WebElement statusWidget;
+
+    public boolean isstatusWidgetDisplayed() {
+        return statusWidget.isDisplayed();
+    }
 
 
 
@@ -82,21 +71,29 @@ public class DashboardPage {
     @FindBy(xpath = "//div[@class='background-selector']/button")
     public WebElement backgroundPictures;
 
+
     @FindBy(xpath = "//div[@class='background-selector']/button[2]")
     public WebElement selectBackgroundPicture;
 
+
     //Locating set status widget with xpath
-    @FindBy(xpath = "//button[@class='user-status-menu-item__" +
-            "toggle user-status-menu-item__toggle--inline']")
+    @FindBy(xpath = "//button[@class='user-status-menu-item__toggle user-status-menu-item__toggle--inline']")
     public WebElement setStatusWidget;
 
+    //Locating online status option with xpath
     @FindBy(xpath = "//label[@for='user-status-online-status-online']")
     public WebElement statusOnline;
 
-   */
+    //Locating Status messages with xpath
+    @FindBy(xpath = "//div[@class='predefined-statuses-list']")
+   public WebElement statusMessages;
 
 
-    }}
 
+
+
+
+
+}
 
 
