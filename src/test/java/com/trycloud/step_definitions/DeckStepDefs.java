@@ -41,5 +41,18 @@ public class DeckStepDefs {
         Assert.assertTrue(deckPage.newCreatedDeck.isDisplayed());
 
     }
+    @When("User clicks on created board")
+    public void user_clicks_on_created_board() {
+        deckPage.newCreatedDeck.click();
+    }
+    @When("User types in list {string} and hits enter")
+    public void user_types_in_list_and_hits_enter(String string) {
+        deckPage.createListBox.sendKeys(string);
+        deckPage.createListBox.sendKeys(Keys.ENTER);
+    }
+    @Then("New list should be created")
+    public void new_list_should_be_created() {
+        Assert.assertTrue(deckPage.newCreatedList.isDisplayed());
+    }
 
 }

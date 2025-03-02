@@ -26,6 +26,31 @@ public class DeckPage {
     @FindBy(xpath = "//span[@title='New Board 2']")
     public WebElement newCreatedDeck;
 
+    @FindBy(xpath = "//input[@class='no-close']")
+    public WebElement createListBox;
+
+    @FindBy(xpath = "//*[contains(text(), 'List 1')]")
+    public WebElement newCreatedList;
+
+    @FindBy(xpath = "//span[@title='New Board 2']//parent::a//following-sibling::div")
+    public WebElement deckOptionsList;
+
+    @FindBy(xpath = "//span[.='Delete board']")
+    public WebElement deleteBoardOption;
+
+    @FindBy(xpath = "//button[@class='error primary']")
+    public WebElement deleteButton;
+
+
+
+//    @FindBy(xpath = "]")
+//    public WebElement ;
+//    @FindBy(xpath = "]")
+//    public WebElement ;
+//    @FindBy(xpath = "]")
+//    public WebElement ;
+//    @FindBy(xpath = "]")
+//    public WebElement ;
 
 
 
