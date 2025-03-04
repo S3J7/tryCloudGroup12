@@ -9,8 +9,10 @@ import com.trycloud.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.cucumber.java.AfterStep;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import com.trycloud.pages.DeckPage;
 
 import java.time.Duration;
 
@@ -52,6 +54,27 @@ public class Hooks {
         BrowserUtils.sleep(2);
         Driver.closeDriver();
 
+    }
+
+    @After
+    public void cleanUpAfterScenario(Scenario scenario) {
+        DeckPage deckPage = new DeckPage();
+        if (scenario.getSourceTagNames().contains("@cleanup_required")) {
+            try {
+                if (deckPage.deckOptionsList.isDisplayed()) {
+                    deckPage.deckOptionsList.click();
+                    Thread.sleep(1000);
+
+                    deckPage.deleteBoardOption.click();
+                    Thread.sleep(1000);
+
+                    deckPage.deleteButton.click();
+                    System.out.println("Board deleted after scenario.");
+                }
+            } catch (Exception e) {
+                System.err.println("Failed to delete board: " + e.getMessage());
+            }
+        }
     }
 
     //@BeforeStep
