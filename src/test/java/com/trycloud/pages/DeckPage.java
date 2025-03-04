@@ -58,9 +58,33 @@ public class DeckPage {
 
     @FindBy(xpath = "//div[@class='avatardiv popovermenu-wrapper has-tooltip']//img")
     public WebElement assignToMe;
-//
-//    @FindBy(xpath = "]")
-//    public WebElement ;
+
+    @FindBy(xpath = "//span[normalize-space()='Move card']")
+    public WebElement moveCardOption;
+
+    @FindBy(xpath = "//input[@placeholder='Select a board']")
+    public WebElement selectABoardOption;
+
+    @FindBy(xpath = "//span[@class='name-parts__first'][normalize-space()='New Board']")
+    public WebElement newBoardOption;
+
+    @FindBy(xpath = "//input[@placeholder='Select a list']")
+    public WebElement selectListOption;
+
+    @FindBy(xpath = "//div[@class='multiselect multiselect--active multiselect--single']//span[@class='multiselect__option multiselect__option--highlight']")
+    public WebElement newListOption;
+
+    @FindBy(xpath = "//button[@class='primary']")
+    public WebElement moveCardButton;
+
+    @FindBy(xpath = "//li[@class='app-navigation-entry router-link-exact-active active']//a[@class='app-navigation-entry-link']")
+    public WebElement newBoardLink;
+
+
+//    @FindBy(xpath = "//input[@placeholder='Select a list']")
+//    public WebElement selectListOption;
+//    @FindBy(xpath = "//input[@placeholder='Select a list']")
+//    public WebElement selectListOption;
 
 
 

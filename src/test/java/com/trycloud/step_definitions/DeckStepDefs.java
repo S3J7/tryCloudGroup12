@@ -81,4 +81,26 @@ public class DeckStepDefs {
         Assert.assertTrue(deckPage.assignToMe.isDisplayed());
     }
 
+    @When("User clicks move card")
+    public void user_clicks_move_card() {
+        deckPage.moveCardOption.click();
+    }
+    @When("User selects board and list")
+    public void user_selects_board_and_list() {
+        deckPage.selectABoardOption.click();
+        deckPage.newBoardOption.click();
+        deckPage.selectListOption.click();
+        deckPage.newListOption.click();
+
+    }
+    @When("User clicks move card button")
+    public void user_clicks_move_card_button() {
+        deckPage.moveCardButton.click();
+        deckPage.newBoardLink.click();
+    }
+    @Then("card should be moved")
+    public void card_should_be_moved() {
+        Assert.assertTrue(deckPage.newCard.isDisplayed());
+    }
+
 }
