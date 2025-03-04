@@ -21,3 +21,33 @@ Feature: Deck Functionality
         And User clicks on created board
         And User types in list "List 1" and hits enter
         Then New list should be created
+
+    @cleanup_required
+    Scenario: TC3: Adding a new card
+        Given user is logged in with valid "Employee12" and "Employee123"
+        When The user clicks on the deck icon
+        And User clicks to expand
+        And User clicks Add board
+        When User types in "New Board 2" and hits enter
+        And User clicks on created board
+        And User types in list "List 1" and hits enter
+        When User clicks create new card
+        And User types "card 1" and hits enter
+        Then New card should be created
+
+
+
+    @cleanup_required
+    Scenario: TC3: Adding a new card
+        Given user is logged in with valid "Employee12" and "Employee123"
+        When The user clicks on the deck icon
+        And User clicks to expand
+        And User clicks Add board
+        When User types in "New Board 2" and hits enter
+        And User clicks on created board
+        And User types in list "List 1" and hits enter
+        When User clicks create new card
+        And User types "card 1" and hits enter
+        And User clicks on the three dots
+        And User clicks assign to me
+        Then card should be assign to the user

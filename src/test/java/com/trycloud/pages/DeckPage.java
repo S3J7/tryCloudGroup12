@@ -41,16 +41,29 @@ public class DeckPage {
     @FindBy(xpath = "//button[@class='error primary']")
     public WebElement deleteButton;
 
+    @FindBy(css = "#app-content-vue > div > div.board > div > div > div > div.stack__header > div > div > div > button")
+    public WebElement addCardButton;
+
+    @FindBy(xpath = "//input[@id='new-stack-input-main']")
+    public WebElement cardInputBox;
+
+    @FindBy(xpath = "//div[@class='card-upper']")
+    public WebElement newCard;
+
+    @FindBy(xpath = "//button[@aria-controls='menu-hxhus']")
+    public WebElement card3dots;
+
+    @FindBy(xpath = "//span[normalize-space()='Assign to me']")
+    public WebElement assignToMeOption;
+
+    @FindBy(xpath = "//div[@class='avatardiv popovermenu-wrapper has-tooltip']//img")
+    public WebElement assignToMe;
+//
+//    @FindBy(xpath = "]")
+//    public WebElement ;
 
 
-//    @FindBy(xpath = "]")
-//    public WebElement ;
-//    @FindBy(xpath = "]")
-//    public WebElement ;
-//    @FindBy(xpath = "]")
-//    public WebElement ;
-//    @FindBy(xpath = "]")
-//    public WebElement ;
+
 
 
 

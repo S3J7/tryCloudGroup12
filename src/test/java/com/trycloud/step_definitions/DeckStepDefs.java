@@ -55,4 +55,30 @@ public class DeckStepDefs {
         Assert.assertTrue(deckPage.newCreatedList.isDisplayed());
     }
 
+    @When("User clicks create new card")
+    public void user_clicks_create_new_card() {
+        deckPage.addCardButton.click();
+    }
+    @When("User types {string} and hits enter")
+    public void user_types_and_hits_enter(String string) {
+        deckPage.cardInputBox.sendKeys(string);
+        deckPage.cardInputBox.sendKeys(Keys.ENTER);
+    }
+    @Then("New card should be created")
+    public void new_card_should_be_created() {
+        Assert.assertTrue(deckPage.newCard.isDisplayed());
+    }
+    @When("User clicks on the three dots")
+    public void user_clicks_on_the_three_dots() {
+        deckPage.card3dots.click();
+    }
+    @When("User clicks assign to me")
+    public void user_clicks_assign_to_me() {
+        deckPage.assignToMeOption.click();
+    }
+    @Then("card should be assign to the user")
+    public void card_should_be_assign_to_the_user() {
+        Assert.assertTrue(deckPage.assignToMe.isDisplayed());
+    }
+
 }
