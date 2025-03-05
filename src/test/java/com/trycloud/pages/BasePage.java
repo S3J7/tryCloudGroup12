@@ -14,23 +14,11 @@ public class BasePage {
     }
 
 
-    @FindBy(xpath = "(//div[@role='button'])[3]")
-    public WebElement userIcon_Button;
-
-    @FindBy(xpath = "//li[@data-id='logout']")
-    public WebElement logout_Button;
-
-    public void click_on_logout(){
-        userIcon_Button.click();
-        logout_Button.click();
-    }
-
     //Siri - ContactMenu Button
     @FindBy(xpath = "//li[@data-id='contacts']")
     public WebElement contactBtn;
 
     }
-
 
 
 
