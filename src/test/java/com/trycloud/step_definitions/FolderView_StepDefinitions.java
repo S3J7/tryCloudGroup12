@@ -71,7 +71,7 @@ public class FolderView_StepDefinitions {
         }
     }
 
-
+ // Third scenario
     @When("user clicks on Modified icon")
     public void userClicksOnModifiedIcon() {
         folderViewPage.modifiedClick.click();
@@ -94,7 +94,7 @@ public class FolderView_StepDefinitions {
         }
     }
 
-
+// Fourth scenario
     @When("user clicks on the toggle-view button at the right corner of all files tab screen")
     public void userClicksOnTheToggleViewButtonAtTheRightCornerOfAllFilesTabScreen() {
         folderViewPage.toggleView.click();
@@ -116,7 +116,7 @@ public class FolderView_StepDefinitions {
         }
     }
 
-
+// Fifth scenario
     @When("user clicks on the select all checkbox at the left top corner of the list")
     public void userClicksOnTheSelectAllCheckboxAtTheLeftTopCornerOfTheList() {
         folderViewPage.checkBox.click();

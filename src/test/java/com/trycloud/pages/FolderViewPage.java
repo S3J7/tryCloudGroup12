@@ -12,7 +12,7 @@ public class FolderViewPage {
     public FolderViewPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
+//Locators
     @FindBy(xpath = "(//a[contains(.,'Files')])[1]")
     public WebElement folderImage;
 
