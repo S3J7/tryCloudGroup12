@@ -82,8 +82,8 @@ public class LogoutStepDefs {
         Cookie sessionCookie = Driver.getDriver().manage().getCookieNamed("nc_token");
         Assert.assertNull(sessionCookie);
     }
-    @Then("the session token or cookie is invalidated")
-    public void the_session_token_or_cookie_is_invalidated() {
+    @Then("the user is redirected to the login page")
+    public void theUserIsRedirectedToTheLoginPage() {
         BrowserUtils.verifyURLContains("login");
     }
 
